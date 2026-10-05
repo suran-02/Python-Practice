@@ -1,0 +1,42 @@
+#class example
+class Dog:
+    species = "Siberian Husky"
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+
+dog1 = Dog("Prince",2)
+print("Name: " + dog1.name)
+print("Age: " + str(dog1.age) + "y")
+print("Species: "+dog1.species)
+
+#Encapsulation
+class BankAcc:
+    def __init__(self,balance):
+        self.__balance = balance
+    def deposit(self,amount):
+        self.__balance += amount
+    def get_balance(self):
+        return self.__balance
+
+acc = BankAcc(1000)
+acc.deposit(4230)
+print(acc.get_balance())
+
+#Abstraction
+from abc import ABC, abstractmethod
+class Vehicle(ABC):
+    @abstractmethod
+    def start(self):
+        pass
+class Car(Vehicle):
+    def start(self):
+        print("Car starts with a key")
+class Bike(Vehicle):
+    def start(self):
+        print("Bike starts with a button")
+
+c = Car()
+c.start()
+b = Bike()
+b.start()
