@@ -40,3 +40,45 @@ c = Car()
 c.start()
 b = Bike()
 b.start()
+
+
+#Inheritance
+#Single Inheritance
+##Parent Class
+class Person:
+    def __init__(self,name,id_no):
+        self.name = name
+        self.id_no = id_no
+
+    def display(self):
+        print(f"Name: {self.name}, ID: {self.id_no}")
+
+##creating an instance of Person
+person = Person("Alice",101)
+person.display()
+
+##Child Class
+class Employee(Person):
+    def print_message(self):
+        print("Employee class called")
+
+##creating an instance of Employee
+emp = Employee("Bob",102)
+emp.display() #Calling the inherited method
+emp.print_message() #Calling the child class method
+
+#Multiple Inheritance:
+
+class Mother:
+  last_name_1 = "Nath"
+class Father:
+  last_name_2 = "Roy"
+
+class Child(Mother,Father):
+  last_name = Mother.last_name_1 + " " + Father.last_name_2
+  def show_last_name(self):
+      print(self.last_name)
+
+c= Child()
+c.show_last_name()
+
