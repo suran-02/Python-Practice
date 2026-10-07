@@ -82,3 +82,35 @@ class Child(Mother,Father):
 c= Child()
 c.show_last_name()
 
+#Polymorphism
+
+class Animal:
+    def sound(self):
+        return "Some generic sound"
+class Dog(Animal):
+    def sound(self):
+        return "Bark"
+class Cat(Animal):
+    def sound(self):
+        return "Meow"
+#polymorphic behaviour
+animals = [Dog(),Cat(),Animal()]
+for a in animals:
+    print(a.sound())
+
+
+#Another example of Polymorphism
+
+class UPI:
+    def pay(self):
+        print("Paying with UPI")
+class Card:
+    def pay(self):
+        print("Paying with Card")
+class Cash:
+    def pay(self):
+        print("Paying with Cash")
+payments = [UPI(), Card(), Cash()]
+
+for p in payments:
+    p.pay()
